@@ -47,7 +47,7 @@ Pull the local model (Llama-3 or Phi-3):
 ollama run llama3
 # Wait for the chat prompt, then type /bye to exit. The server remains active.
 
-### 3. Start the Database
+### **3. Start the Database**
 Run the PostgreSQL container with vector support:
 
 docker run -d \
