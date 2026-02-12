@@ -46,3 +46,36 @@ Pull the local model (Llama-3 or Phi-3):
 ```bash
 ollama run llama3
 # Wait for the chat prompt, then type /bye to exit. The server remains active.
+
+### 3. Start the Database
+Run the PostgreSQL container with vector support:
+
+docker run -d \
+  --name rag_db \
+  -e POSTGRES_USER=admin \
+  -e POSTGRES_PASSWORD=password123 \
+  -e POSTGRES_DB=rag_experiment_db \
+  -p 5432:5432 \
+  pgvector/pgvector:pg16
+
+### 4. Install Dependencies
+pip install -r requirements.txt
+
+### 5. Run the Application
+
+#### Terminal 1: The Chatbot
+streamlit run app.py
+
+#### Terminal 2: The Analytics Dashboard
+streamlit run dashboard.py
+
+📊 Analytics Dashboard
+The dashboard.py application provides real-time insights into the experiment:
+
+Win Rate: Percentage of positive feedback (👍) per group.
+
+Latency Tracking: Average inference time (ms) comparison.
+
+Volume: Total queries processed per model version.
+
+
