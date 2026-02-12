@@ -1,0 +1,8 @@
+streamlit
+psycopg2-binary
+langchain
+langchain-community
+langchain-huggingface
+langchain-ollama
+pandas
+plotly
