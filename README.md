@@ -79,3 +79,17 @@ Latency Tracking: Average inference time (ms) comparison.
 Volume: Total queries processed per model version.
 
 
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : &quot;places&quot;
+    
+    CUSTOMERS {
+        int customer_id PK
+        string name
+        string email
+    }
+    
+    ORDERS {
+        int order_id PK
+        int customer_id FK
+        float total_price
+    }
